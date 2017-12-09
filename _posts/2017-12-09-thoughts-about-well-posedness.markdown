@@ -48,14 +48,14 @@ class Bar:
         self.intial_distribution = initial_distribution
 {% endhighlight %}
 
-What's maybe more interesting is that we even an initial distribution may not be enough to specify what's going on fully. We may need to take into account boundary temperatures too. '
+What's maybe more interesting is that we even an initial distribution may not be enough to specify what's going on fully. We may need to take into account boundary temperatures too for it to be well posed. But as a guideline, being well-posed means 
+
+<ul>
+    <li>the solution exists,</li>
+    <li>the solution is unique</li>
+    <li>if we change the boundary conditions a tiny bit, the solutions shouldn't change that much either.</li>
+</ul>
+
+On try to solve a well posed problem, let's go over the ideas behind the method of characteristics. 
 
 
-
-
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
