@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-12-09T11:22:08+08:00</updated><id>http://localhost:4000/</id><title type="html">WatermelonJuice</title><subtitle>Maths, Computer Science, History, Economics and Art.</subtitle><entry><title type="html">Thoughts about well-posed Problems</title><link href="http://localhost:4000/jekyll/update/2017/12/09/thoughts-about-well-posedness.html" rel="alternate" type="text/html" title="Thoughts about well-posed Problems" /><published>2017-12-09T07:51:12+08:00</published><updated>2017-12-09T07:51:12+08:00</updated><id>http://localhost:4000/jekyll/update/2017/12/09/thoughts-about-well-posedness</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/12/09/thoughts-about-well-posedness.html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Let’s say we want to model some real-life situation. For example, if we want to model the heat flow of some kind of system, say, we would start by attempting to solve the heat equation:&lt;/p&gt;
+
+&lt;center&gt;
+$$ \frac{\partial \theta^{2}}{\partial t}  = \nabla^{2} \theta. $$
+&lt;/center&gt;
+&lt;p&gt;But now we have an issue. The equation on it’s own isn’t really enough to tell us what’s going on. We would need to set the problem up in the right way for it to make any sense. Firstly, what’s the shape of the object we are acting on with the heat? It could be;&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt; A bar of length \( l \).&lt;/li&gt;
+    &lt;li&gt; A disk of some radius.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;body&gt;
+But even though we have the shape, we need to describe how the problem is set up. In the heat example, this may be to do with how the heat is set up and the end points, and how the heat distribution is initally! If we descibe the heat as \(\theta=\theta(x, t)\), then we may wish to specify that on a bar of length \(l\), 
+
+&lt;/body&gt;
+&lt;center&gt;
+$$ \theta(x, 0)  = x, \text{ } 0 \leq x \leq l $$
+&lt;/center&gt;
+
+&lt;body&gt;
+But the question is; what liberties can we take in terms of data to ensure that what we get out of the model makes any sense whatsoever?
+&lt;/body&gt;
+
+&lt;p&gt;In fact, we might even relate this to initialising some data in a class which describes an object, in Python we might have for example a bar represented by a list of list of temperatures. Each list represents a given time, and within each list each temperature represents a position. Maybe more on data structures we could use later.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;br data-jekyll-commonmark-ghpages=&quot;&quot; /&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initial_distribution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;br data-jekyll-commonmark-ghpages=&quot;&quot; /&gt;        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;br data-jekyll-commonmark-ghpages=&quot;&quot; /&gt;        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;br data-jekyll-commonmark-ghpages=&quot;&quot; /&gt;        &lt;br data-jekyll-commonmark-ghpages=&quot;&quot; /&gt;        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;br data-jekyll-commonmark-ghpages=&quot;&quot; /&gt;        Here we would need to specifiy what the&lt;br data-jekyll-commonmark-ghpages=&quot;&quot; /&gt;        intial heat shape at the discrete points look like. &lt;br data-jekyll-commonmark-ghpages=&quot;&quot; /&gt;        &quot;&quot;&quot;&lt;/span&gt;&lt;br data-jekyll-commonmark-ghpages=&quot;&quot; /&gt;        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intial_distribution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initial_distribution&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;What’s maybe more interesting is that we even an initial distribution may not be enough to specify what’s going on fully. We may need to take into account boundary temperatures too. ‘&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry></feed>
