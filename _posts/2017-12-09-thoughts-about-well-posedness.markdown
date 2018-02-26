@@ -48,14 +48,34 @@ class Bar:
         self.intial_distribution = initial_distribution
 {% endhighlight %}
 
-What's maybe more interesting is that we even an initial distribution may not be enough to specify what's going on fully. We may need to take into account boundary temperatures too for it to be well posed. But as a guideline, being well-posed means 
+What's maybe more interesting is that even an initial distribution may not be enough to specify what's going on fully. We may need to take into account boundary temperatures too. 
 
-<ul>
-    <li>the solution exists,</li>
-    <li>the solution is unique</li>
-    <li>if we change the boundary conditions a tiny bit, the solutions shouldn't change that much either.</li>
-</ul>
+Let's look at some examples of when a question is ill-posed. For example, if we're trying to back-track an equation in reverse time, like for example the reverse diffusion eqution (often part of a class of larger problems called inverse problems); 
 
-On try to solve a well posed problem, let's go over the ideas behind the method of characteristics. 
+<center>
+$$ \frac{\partial^{2} \theta}{\partial x^{2}} + \frac{\partial \theta}{\partial x} = 0 $$
+</center>
 
+then solving this equation leads to a situation where the final solution is really senstive to in initial distribution. In this case, the intial distribution is like the "final heat measurement" one makes. 
+
+
+
+
+
+The idea about method of characteristics lies in structuring a path where we can follow the boundary conditions. We try to parametrize across the boundary conditions, and then use that information to inspect some identities about the 'tangent' vector involved.
+
+For example, suppose we had the problem
+
+<center>
+$$ 3y u_{x} + 2xu_{y} = 0 . \text{ } u = \sin(x) \text{ on } (x, 0)$$ 
+</center>
+
+This problem's quite nice because we have some slight asymmetry here in the coeffecients. Also have a look at the boundary condition, this also looks quite simple to parametrize across. 
+What we have to do is nicely parametrize the characteristics; the lines where the solution is constant. 
+
+<b>
+Characteristics for hyperbolic PDEs. 
+</b>
+
+When we have an 2nd order PDE, then we need to reduce it to a nicer form called the "canonical form". This can be done by identifying the characteristics. First we factorize, then look at the 2nd order stuff to determine what's going on with them. The first order things we already know how to deal with. The we can make a change of variables. ' 
 
