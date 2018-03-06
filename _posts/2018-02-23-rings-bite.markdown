@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Rings and their key Theorems"
+title:  "Rings"
 date:   2018-2-20 07:51:12 +0800
 categories: jekyll update
 ---

@@ -1,7 +1,6 @@
 ---
 layout: post
-title:  "A bunch of methods for solving ordinary differential equations"
-date:   2018-2-20 07:51:12 +0800
+title:  "Methods for ODEs"
 categories: jekyll update
 ---
 

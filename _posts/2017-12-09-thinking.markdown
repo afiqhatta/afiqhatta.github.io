@@ -1,7 +1,0 @@
----
-layout: post
-title:  "Thinking and the Philosophy of Knowledge"
-date:   2017-12-09 07:51:12 +0800
-categories: jekyll update
----
-Post coming soon. 
