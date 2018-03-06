@@ -8,4 +8,18 @@ categories: jekyll update
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<h>Contraction mapping and the solution of equations</h1>
+<h1>Differentiability between vector spaces</h1>
+
+Some key ideas 
+
+<h1>Contraction mapping and the solution of equations</h1>
+
+The solution of multivariable equations can be analysed with the following key results: 
+
+<ul>
+<li><b>The contraction principle</b>: maps which contract distances have a unique fixed point</li>
+<li><b>The inverse function theorem</b>: maps at a point with an invertible derivative are locally invertible at that point, and the inverse is actually continuously differentiable</li>
+<li><b>The implicit function theorem</b></li>
+<li><b>Picard's theorem'</b></li>
+</ul>
+
